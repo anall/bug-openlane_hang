@@ -1,27 +1,41 @@
 [*]
 [*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
-[*] Tue Oct  5 14:33:12 2021
+[*] Tue Oct  5 14:40:58 2021
 [*]
 [dumpfile] "/home/anall/Projects/zero-to-asic/projects/example-fib/fib.vcd"
-[dumpfile_mtime] "Tue Oct  5 14:32:50 2021"
-[dumpfile_size] 1110846
+[dumpfile_mtime] "Tue Oct  5 14:40:32 2021"
+[dumpfile_size] 4914
 [savefile] "/home/anall/Projects/zero-to-asic/projects/example-fib/fib.gtkw"
-[timestart] 87000000
+[timestart] 96400
 [size] 1650 909
 [pos] 113 0
-*-26.000000 340001000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-16.000000 480000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] fib.
 [sst_width] 205
 [signals_width] 201
 [sst_expanded] 1
 [sst_vpaned_height] 267
-@23
+@22
 fib.data[7:0]
+fib.data_c[7:0]
 @28
 fib.start
 fib.busy
 fib.oe_i
 fib.we_i
 fib.addr_i
+@23
+fib.tmp_add[8:0]
+@22
+fib.tmp[7:0]
+fib.reg_a.value[7:0]
+@28
+fib.reg_a.we
+fib.reg_a.oe
+@22
+fib.reg_b.value[7:0]
+@28
+fib.reg_b.we
+fib.reg_b.oe
 [pattern_trace] 1
 [pattern_trace] 0

@@ -15,7 +15,7 @@ module fib(
 );
 
 
-wire [8:0] tmp_add = tmp + data;
+wire [8:0] tmp_add = tmp + data_c;
 
 reg [7:0] tmp;
 reg [7:0] data_i;
@@ -27,7 +27,8 @@ wire addr_c = busy ? addr_i : address;
 wire oe_c = busy ? oe_i : oe;
 wire we_c = busy ? we_i : we;
 
-assign data = busy&&we_i ? data_i : 'z;
+wire [7:0] data_c = we_c ? ( busy ? data_i : data ) : 'z;
+assign data = (oe&~busy) ? data_c : 'z;
 
 localparam STATE_IDLE = 0;
 localparam STATE_READ_FIRST = 1;
@@ -47,7 +48,7 @@ always @(posedge clk) begin
     tmp <= 0;
   end else if ( busy ) begin // busy = state != STATE_IDLE
     if ( state == STATE_READ_FIRST ) begin
-      tmp <= data;
+      tmp <= data_c;
       addr_i <= ( addr_i == 0 ? 1 : 0 ); // don't want to rely on wrapping here
       state <= STATE_READ_SECOND;
     end else if ( state == STATE_READ_SECOND ) begin
@@ -74,8 +75,8 @@ always @(posedge clk) begin
   end
 end
 
-register reg_a( .clk(clk), .reset(reset), .data(data), .we(we_c && addr_c == 0), .oe(oe_c && addr_c == 0) );
-register reg_b( .clk(clk), .reset(reset), .data(data), .we(we_c && addr_c == 1), .oe(oe_c && addr_c == 1) );
+register reg_a( .clk(clk), .reset(reset), .data(data_c), .we(we_c && addr_c == 0), .oe(oe_c && addr_c == 0) );
+register reg_b( .clk(clk), .reset(reset), .data(data_c), .we(we_c && addr_c == 1), .oe(oe_c && addr_c == 1) );
 
 endmodule
 
