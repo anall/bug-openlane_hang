@@ -1,0 +1,25 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Tue Oct  5 13:40:54 2021
+[*]
+[dumpfile] "/home/anall/Projects/zero-to-asic/projects/example-fib/register.vcd"
+[dumpfile_mtime] "Tue Oct  5 13:40:13 2021"
+[dumpfile_size] 496
+[savefile] "/home/anall/Projects/zero-to-asic/projects/example-fib/register.gtkw"
+[timestart] 0
+[size] 1255 600
+[pos] 157 -267
+*-14.000000 50380 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 205
+[signals_width] 110
+[sst_expanded] 1
+[sst_vpaned_height] 158
+@22
+register.data[7:0]
+@23
+register.value[7:0]
+@28
+register.we
+register.oe
+[pattern_trace] 1
+[pattern_trace] 0
