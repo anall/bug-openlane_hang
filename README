@@ -1,0 +1,9 @@
+Simplified test project for possible openlane bug:
+
+ * the main branch works (and has a working gate-level simulation)
+ * the split_bus branch hangs openlane at "clock_skew_report"
+
+This project is tiny and needs something like the following in the config.tcl file:
+
+set ::env(FP_SIZING) absolute
+set ::env(DIE_AREA) "0 0 200 200"
